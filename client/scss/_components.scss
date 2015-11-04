@@ -2,6 +2,7 @@
 // ==============================================================================
 nav {
     position: absolute;
+    display: none;
     z-index: 500;
     top: 0px;
     right: 0px;
@@ -49,6 +50,15 @@ nav {
         margin-top: 200px;
         text-align: center;
     }
+    img {
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+    input, button, #words {
+        visibility: hidden;
+    }
+
 }
 // Two styles
 // ==============================================================================

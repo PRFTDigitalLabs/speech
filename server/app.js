@@ -6,10 +6,8 @@ var pkg = require(__dirname + '/../package.json'),
 
     app = express(),
 	http = require('http').Server(app),
-	io = require('socket.io')(http, {origins:'localhost localhost:3000 localhost*'}),
+	io = require('socket.io')(1337),
 	NounProject = require('the-noun-project'),
-
-	webSocketsServerPort = 1337,
 	clients = [ ],
 	nounProject = new NounProject({
 	    key: '92553a56dfc741798f105284679f5d1c',
@@ -18,7 +16,7 @@ var pkg = require(__dirname + '/../package.json'),
 
 
 
-var client = io.of('client');
+var client = io;
 
 
 client.on('connection', function(socket){
@@ -28,18 +26,15 @@ client.on('connection', function(socket){
 	socket.on('newTerm', function (term) {
 		console.log('QUERY FOR', term);
 		
-        if (term.type === 'utf8') { // accept only text
         	term = encodeURIComponent(term);
+        	console.log(term)
 
-
-		    var result;
 		    nounProject.getIconsByTerm(term, {limit: 1}, function (err, data) {
 			    if (!err) {
 	        		client.emit('message',JSON.stringify( data ));
+	        		console.log(JSON.stringify(data));
 			    }
 			});
-
-        }
 
 	    
 	});
@@ -51,8 +46,6 @@ client.on('connection', function(socket){
 });
 
 
-
-
 var staticPath = __dirname.replace('/server', '/' + pkg.config.buildFolder);
 
 app.use(express.static(staticPath));
@@ -61,8 +54,6 @@ app.use(express.static(staticPath));
 
 app.get('*', function(request, response) {
 
-	response.setHeader("Access-Control-Allow-Origin", "*");
-	response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     response.sendfile('./' + pkg.config.buildFolder + '/index.html');
 
 });
