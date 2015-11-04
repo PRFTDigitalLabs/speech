@@ -1,0 +1,127 @@
+// Body Type
+// ==============================================================================
+p {
+  margin: 0 0 10px;
+}
+
+// Custom Body Type
+// ==============================================================================
+.lead {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+hr {
+  margin: 50px 0;
+  border: 0;
+  border-top: 1px solid $rule-color; 
+}
+
+// Links
+// ==============================================================================
+a, a:visited {
+}
+a:focus {
+  outline: thin dotted #000;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+
+// Headings
+// ==============================================================================
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px;
+  font-weight: 400;
+}
+h1, .h1 {
+  font-size:    31px;
+  line-height:  40px;
+}
+h2, .h2 {
+  font-size:    22px;
+  line-height:  27px;
+}
+h3, .h3 {
+  font-size:    16;
+  line-height:  27px;
+}
+h4, .h4 {
+  font-size:    13px;
+  line-height:  18px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+h5, .h5 {
+  font-size:    14px;
+  line-height:  23px;
+}
+h6, .h6 {
+  font-size:    11px;
+  line-height:  16px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+
+// Button styles
+// ==============================================================================
+.btn {
+  transition: background 0.2s;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: $btn-dark;
+  padding: 9px 10px;
+  vertical-align: center;
+
+  & + .btn {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    background: lighten($btn-dark, 10%);
+  }
+
+  i[class^="ico-"] {
+    font-size: 24px;
+    line-height: 0;
+    position: relative;
+    top: 5px;
+    margin-left: -6px;
+  }
+
+  &.no-icon {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.btn.btn-primary {
+  @extend h4;
+  margin-bottom: 0;
+  background: $btn-light;
+  font-size: 12px;
+  padding: 12px 18px;
+  @extend %layer-over;
+  &:hover {
+    background: lighten($btn-light, 10%);
+  }
+
+  i[class^="ico-"] {
+    font-size: 28px;
+    top: 8px;
+    margin-left: -6px;
+  }
+}
+
+

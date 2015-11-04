@@ -1,0 +1,17 @@
+{
+    "verbose": true,
+    "ignore": [
+        ".git",
+        "node_modules",
+        "bower_components",
+        "bin",
+        "client",
+        "build",
+        ".pre",
+        "release",
+        "Gruntfile.js"
+    ],
+    "watch": [
+        "server/app.js"
+    ]
+}

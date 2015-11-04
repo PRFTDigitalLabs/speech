@@ -1,0 +1,29 @@
+{
+  "name": "speech",
+  "version": "1.0.0",
+  "description": "=======",
+  "homepage": "https://github.com/truthlabs/speech",
+  "authors": [
+    "drew@vosburgs.org"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/truthlabs/speech.git"
+  },
+  "private": true,
+  "main": "server/app.js",
+  "dependencies": {
+    "jquery": "2.1.4",
+    "underscore": "1.8.3",
+    "backbone": "1.2.0",
+    "backbone.statemanager": "0.0.4",
+    "handlebars": "3.0.3",
+    "loader.js": "3.2.1",
+    "gsap": "1.16.1",
+    "just-grid-it": "~0.0.3",
+    "normalize.css": "~3.0.3"
+  },
+  "devDependencies": {
+    "socket.io-client": "~1.3.7"
+  }
+}
